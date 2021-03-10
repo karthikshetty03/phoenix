@@ -14,10 +14,9 @@
         </select>
       </div>
     </div>
-
     <div class="boxBody table-responsive">
       <table id="collectionTable" class="table table-borderless table-sm" *ngIf="showingCollection">
-        <thead>
+        <thead *ngIf="!isSmallScreen">
           <tr>
             <th>No.</th>
             <th>Selection</th>
@@ -28,9 +27,13 @@
         <tbody>
           <tr *ngFor="let object of showingCollection; index as i" [attr.id]="object.uuid"
             [ngClass]="{'active-object': activeObject && activeObject.uuid === object.uuid}">
-            <td>#{{i}}</td>
+            <td class = "alignValues">
+            <span *ngIf="isSmallScreen" class = "alignLabels">No.: </span>#{{i}}</td>
             <td>
-              <div *ngIf="object.uuid" class="row justify-content-center icon-wrapper">
+              <div 
+              [ngClass] = "(isSmallScreen == false) ? 'justify-content-center' : 'alignValue1'"
+              *ngIf="object.uuid" class="row icon-wrapper">
+              <span *ngIf="isSmallScreen" class = "alignLabel1">Selection: </span>
                 <div class="object-select" matTooltip="Move camera to object" (click)="lookAtObject(object.uuid)">
                   <svg>
                     <use href="assets/icons/views.svg#views"></use>
@@ -44,6 +47,7 @@
               </div>
             </td>
             <td>
+              <span *ngIf="isSmallScreen" class = "alignLabel2">Label:</span>
               <div class="row m-0 add-label">
                 <div class="col-10 p-0">
                   <input class="form-control form-control-sm" type="text" [id]="'label' + i" />
@@ -57,7 +61,10 @@
                 </div>
               </div>
             </td>
-            <td *ngFor="let column of collectionColumns">{{object[column]}}</td>
+            <td class = "alignValues" *ngFor="let column of collectionColumns">
+             <span *ngIf="isSmallScreen" class = "alignLabels">{{column}}:</span>
+            {{object[column]}}</td>
+            <mat-divider></mat-divider>
           </tr>
         </tbody>
       </table>

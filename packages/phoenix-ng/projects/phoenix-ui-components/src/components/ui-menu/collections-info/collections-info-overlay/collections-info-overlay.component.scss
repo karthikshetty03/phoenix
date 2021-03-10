@@ -44,14 +44,6 @@
     background: var(--phoenix-background-color-secondary);
   }
 
-  tr * {
-    padding-right: 1.2rem;
-
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-
   tr.active-object {
     color: var(--phoenix-background-color);
     background: var(--phoenix-text-color);
@@ -122,3 +114,55 @@
     color: var(--phoenix-text-color-secondary);
   }
 }
+
+/* media queries for small screen view */
+@media (max-width:600px)  {
+  .alignValues {
+      position : relative;
+      left : 30%;
+  }
+  .alignValue1 {
+      position: relative;
+      left : 35%;
+  }
+  .alignLabel1 {
+      position : relative;
+      padding-right: 5px;
+  }
+  .alignLabel2 {
+      position : relative;
+      left : 30%;
+      padding-right: 5px;
+  }
+  .alignLabels {
+      display : inline-flex;
+      padding-right: 5px;
+  }
+  .table-responsive {
+    overflow-x: hidden;
+  }
+  #collectionTable {
+    td, thead tr th {
+      display : block;
+    }
+  }
+  mat-divider {
+    border: 2px solid white;
+    display: block;
+    margin: 10px; 
+  }
+}
+
+@media (min-width:600px)  {
+  tr * {
+    padding-right: 1.2rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+  
+
+
