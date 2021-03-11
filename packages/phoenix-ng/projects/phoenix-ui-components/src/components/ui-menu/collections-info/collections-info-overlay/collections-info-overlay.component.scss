@@ -117,26 +117,25 @@
 
 /* media queries for small screen view */
 @media (max-width:600px)  {
-  .alignValues {
-      position : relative;
-      left : 30%;
+  .alignLabels {
+    padding-right: 5px;
   }
-  .alignValue1 {
-      position: relative;
-      left : 35%;
-  }
-  .alignLabel1 {
-      position : relative;
-      padding-right: 5px;
+  .alignLabel0, .alignLabel1 {
+    padding-right: 5px;
   }
   .alignLabel2 {
-      position : relative;
-      left : 30%;
-      padding-right: 5px;
+    position : relative;
+    left : 30%;
+    padding-right: 5px;
   }
-  .alignLabels {
-      display : inline-flex;
-      padding-right: 5px;
+  .alignValues {
+    position : relative;
+    left : 30%;
+  }
+  .alignValue1 {
+    position: relative;
+    left : 30%;
+    margin : auto;
   }
   .table-responsive {
     overflow-x: hidden;
@@ -147,7 +146,7 @@
     }
   }
   mat-divider {
-    border: 2px solid white;
+    border: 1px solid white;
     display: block;
     margin: 10px; 
   }

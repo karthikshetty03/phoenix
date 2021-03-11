@@ -28,7 +28,7 @@
           <tr *ngFor="let object of showingCollection; index as i" [attr.id]="object.uuid"
             [ngClass]="{'active-object': activeObject && activeObject.uuid === object.uuid}">
             <td class = "alignValues">
-            <span *ngIf="isSmallScreen" class = "alignLabels">No.: </span>#{{i}}</td>
+            <span *ngIf="isSmallScreen" class = "alignLabel0">No.: </span>#{{i}}</td>
             <td>
               <div 
               [ngClass] = "(isSmallScreen == false) ? 'justify-content-center' : 'alignValue1'"
