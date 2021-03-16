@@ -117,38 +117,52 @@
 
 /* media queries for small screen view */
 @media (max-width:600px)  {
+ 
   .alignLabels {
     padding-right: 5px;
   }
-  .alignLabel0, .alignLabel1 {
+
+  .alignLabel0 {
     padding-right: 5px;
   }
-  .alignLabel2 {
+
+  .alignLabel1, .alignLabel2 {
     position : relative;
     left : 30%;
     padding-right: 5px;
+    vertical-align: super;
   }
+
   .alignValues {
     position : relative;
     left : 30%;
   }
+
   .alignValue1 {
     position: relative;
-    left : 30%;
-    margin : auto;
+    left: 30%;
+    margin: auto;
+    display: inline-flex;
   }
+
   .table-responsive {
     overflow-x: hidden;
   }
+
   #collectionTable {
     td, thead tr th {
       display : block;
     }
   }
+
   mat-divider {
-    border: 1px solid white;
+    border: 1px solid var(--phoenix-border);
     display: block;
     margin: 10px; 
+  }
+  
+  .displayOnSmallScreen {
+    display: none;
   }
 }
 
@@ -159,5 +173,9 @@
     &:last-child {
       padding-right: 0;
     }
+  }
+  
+  .displayOnLargeScreen {
+    display: none;
   }
 }
