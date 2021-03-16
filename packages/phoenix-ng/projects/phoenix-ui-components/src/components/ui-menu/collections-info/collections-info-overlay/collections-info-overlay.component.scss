@@ -44,6 +44,14 @@
     background: var(--phoenix-background-color-secondary);
   }
 
+  tr * {
+    padding-right: 1.2rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
   tr.active-object {
     color: var(--phoenix-background-color);
     background: var(--phoenix-text-color);
